@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El campesino de Estrellas y la Bufona de la Luna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel+Decorative:wght@400;700;900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+    font-family: 'MedievalSharp', cursive;
+    background: 
+        /* Gradiente oscuro base */
+        linear-gradient(135deg, #1a0f0a 0%, #2c1810 100%),
+        /* Textura de madera antigua */
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='%232c1810'/%3E%3Cpath d='M0 0h100v2H0zM0 4h100v2H0zM0 8h100v2H0z' fill='%235d432c' opacity='.1'/%3E%3Cpath d='M0 10h100v2H0zM0 14h100v2H0zM0 18h100v2H0z' fill='%235d432c' opacity='.2'/%3E%3C/svg%3E"),
+        /* Estantes de biblioteca */
+        linear-gradient(to right, rgba(93, 67, 44, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(93, 67, 44, 0.1) 1px, transparent 1px),
+        /* Sombra y profundidad */
+        radial-gradient(ellipse at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 80%, rgba(139, 90, 43, 0.05) 0%, transparent 40%);
+    background-size: 
+        100% 100%,
+        100% 100%,
+        50px 50px,
+        50px 50px,
+        100% 100%,
+        100% 100%;
+    color: #e8d8b6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Añadir un efecto de lámpara de aceite colgante */
+body::before {
+    content: "";
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 200px;
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* Añadir polvo y partículas flotantes */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 300px 300px, 400px 400px, 500px 500px;
+    z-index: -1;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(-100px) translateX(100px); }
+}
+        
+        .book-container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #1a1208;
+            border-radius: 5px 15px 15px 5px;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.7),
+                inset 0 0 0 1px #5d432c,
+                inset 0 0 0 2px #3a2418;
+            overflow: hidden;
+            position: relative;
+            border: 8px solid #3a2418;
+            border-left: 15px solid #2c1810;
+        }
+        
+        /* Portada estilo medieval */
+        .book-cover {
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(135deg, #2c1810 0%, #1a1208 100%);
+            color: #e8d8b6;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235d432c' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .cover-image-container {
+            width: 100%;
+            height: 70%;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 3px solid #5d432c;
+        }
+        
+        .cover-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.5) brightness(0.8) contrast(1.1);
+        }
+        
+        .cover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 18, 8, 0.5), rgba(26, 18, 8, 0.9));
+        }
+        
+        .cover-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            z-index: 3;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 4rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            color: #d4af37;
+            text-shadow: 
+                2px 2px 0 #5d432c,
+                4px 4px 0 rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .cover-subtitle {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-style: italic;
+            color: #c9b18b;
+            max-width: 600px;
+            line-height: 1.5;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 1px solid #5d432c;
+            border-bottom: 1px solid #5d432c;
+            padding: 15px 0;
+        }
+        
+        .cover-quote {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-top: 30px;
+            padding: 15px 25px;
+            border-left: 3px solid #d4af37;
+            border-right: 3px solid #d4af37;
+            background-color: rgba(93, 67, 44, 0.3);
+            border-radius: 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .open-book-btn {
+            background: linear-gradient(to bottom, #8b5a2b, #5d432c);
+            color: #f5e8d0;
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 4;
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            letter-spacing: 1px;
+            margin-top: 30px;
+            display: inline-block;
+            border: 2px solid #5d432c;
+            text-transform: uppercase;
+        }
+        
+        .open-book-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: linear-gradient(to bottom, #9b6a3b, #6d5334);
+        }
+        
+        /* Contenido del libro - FONDO MEJORADO */
+        .book-content {
+            display: none;
+            padding: 50px;
+            min-height: 700px;
+            position: relative;
+            background-color: #f5f0e1;
+            /* Fondo de pergamino medieval mejorado */
+            background-image: 
+                /* Textura de papel envejecido */
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235d432c' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                /* Manchas de tinta/edad */
+                radial-gradient(ellipse at 20% 30%, rgba(93, 67, 44, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(139, 90, 43, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 20%, rgba(93, 67, 44, 0.04) 0%, transparent 50%),
+                /* Textura granular */
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+            color: #3a2418;
+        }
+        
+        /* Cada página con fondo de pergamino individual */
+        .page {
+            display: none;
+            animation: fadeIn 0.8s ease;
+            padding: 40px;
+            background-color: rgba(245, 240, 225, 0.85);
+            border-radius: 3px;
+            border: 1px solid #d4c4a3;
+            box-shadow: 
+                inset 0 0 30px rgba(139, 90, 43, 0.1),
+                0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                /* Textura de fibras de papel */
+                linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                /* Manchas de edad */
+                radial-gradient(ellipse at 10% 90%, rgba(139, 90, 43, 0.03) 0%, transparent 30%),
+                radial-gradient(ellipse at 90% 10%, rgba(93, 67, 44, 0.03) 0%, transparent 30%);
+            background-size: 20px 20px, 20px 20px, 100% 100%, 100% 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            position: relative;
+            border-bottom: 2px solid #d4af37;
+            z-index: 1;
+        }
+        
+        .page-header:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background-color: #8b5a2b;
+        }
+        
+        .page-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.5rem;
+            color: #8b5a2b;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 0 rgba(245, 240, 225, 0.8);
+            letter-spacing: 1px;
+        }
+        
+        .page-subtitle {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.2rem;
+            color: #5d432c;
+            font-style: italic;
+        }
+        
+        .page-body {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+            font-family: 'MedievalSharp', cursive;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-body p {
+            margin-bottom: 25px;
+            text-indent: 2em;
+        }
+        
+        .page-image-container {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border: 1px solid #d4af37;
+            box-shadow: 
+                inset 0 0 15px rgba(93, 67, 44, 0.1),
+                0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .story-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 3px;
+            border: 1px solid #8b5a2b;
+            max-height: 300px;
+            object-fit: cover;
+            filter: sepia(0.3);
+        }
+        
+        .image-info {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: rgba(212, 175, 55, 0.08);
+            border-radius: 3px;
+            border-top: 1px solid #d4af37;
+        }
+        
+        .image-caption {
+            font-style: italic;
+            font-size: 1rem;
+            color: #5d432c;
+            text-align: center;
+            font-family: 'Cinzel Decorative', serif;
+            margin-bottom: 5px;
+        }
+        
+        .image-suggestion {
+            font-size: 0.9rem;
+            color: #8b5a2b;
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .page-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #d4af37;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-number {
+            font-size: 1rem;
+            color: #8b5a2b;
+            font-style: italic;
+            font-family: 'Cinzel Decorative', serif;
+        }
+        
+        .page-controls {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .page-btn {
+            background: linear-gradient(to bottom, #8b5a2b, #5d432c);
+            color: #f5e8d0;
+            border: none;
+            padding: 10px 25px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1rem;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 
+                0 3px 10px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid #5d432c;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            background: linear-gradient(to bottom, #9b6a3b, #6d5334);
+        }
+        
+        .page-btn:disabled {
+            background: #a08a6d;
+            color: #d4c4a3;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .book-progress {
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #d4c4a3;
+            border-radius: 0;
+            overflow: hidden;
+            margin-bottom: 10px;
+            border: 1px solid #8b5a2b;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, #8b5a2b, #d4af37);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-text {
+            font-size: 0.9rem;
+            color: #5d432c;
+            font-family: 'Cinzel Decorative', serif;
+        }
+        
+        .dedication-page {
+            text-align: center;
+        }
+        
+        .dedication-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.8rem;
+            color: #8b5a2b;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 0 rgba(245, 240, 225, 0.8);
+        }
+        
+        .dedication-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-style: italic;
+            color: #3a2418;
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .dedication-signature {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.8rem;
+            color: #8b5a2b;
+            margin-top: 50px;
+        }
+        
+        .heart {
+            color: #8b5a2b;
+            margin: 0 5px;
+        }
+        
+        .close-book-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #8b5a2b;
+            border: 1px solid #5d432c;
+            color: #f5e8d0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .close-book-btn:hover {
+            color: #d4af37;
+            transform: scale(1.1);
+            background-color: #9b6a3b;
+        }
+        
+        .book-spine {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(to right, #2c1810 0%, #1a1208 100%);
+            box-shadow: 
+                inset -5px 0 10px rgba(0, 0, 0, 0.5),
+                2px 0 5px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .medieval-border {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #d4af37;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            z-index: 2;
+        }
+        
+        .corner-tl {
+            top: 15px;
+            left: 15px;
+            border-top: 2px solid #d4af37;
+            border-left: 2px solid #d4af37;
+        }
+        
+        .corner-tr {
+            top: 15px;
+            right: 15px;
+            border-top: 2px solid #d4af37;
+            border-right: 2px solid #d4af37;
+        }
+        
+        .corner-bl {
+            bottom: 15px;
+            left: 15px;
+            border-bottom: 2px solid #d4af37;
+            border-left: 2px solid #d4af37;
+        }
+        
+        .corner-br {
+            bottom: 15px;
+            right: 15px;
+            border-bottom: 2px solid #d4af37;
+            border-right: 2px solid #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .book-container {
+                max-width: 95%;
+            }
+            
+            .book-cover, .book-content {
+                padding: 0;
+            }
+            
+            .cover-title {
+                font-size: 2.8rem;
+            }
+            
+            .cover-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-body {
+                font-size: 1.1rem;
+            }
+            
+            .page-controls {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .page-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .story-image {
+                max-height: 200px;
+            }
+            
+            .book-content {
+                padding: 30px 15px;
+            }
+            
+            .page {
+                padding: 25px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .story-image {
+                max-height: 150px;
+            }
+            
+            .cover-title {
+                font-size: 2.2rem;
+            }
+            
+            .cover-subtitle {
+                font-size: 1rem;
+            }
+            
+            .cover-quote {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+        
+        .chapter-divider {
+            text-align: center;
+            margin: 30px 0;
+            color: #8b5a2b;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            position: relative;
+        }
+        
+        .chapter-divider:before, .chapter-divider:after {
+            content: "♔";
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+        
+        .highlight {
+            color: #8b5a2b;
+            font-weight: bold;
+            text-shadow: 0 0 1px rgba(139, 90, 43, 0.2);
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 20px;
+            border-left: 3px solid #8b5a2b;
+            margin: 25px 0;
+            background-color: rgba(139, 90, 43, 0.05);
+            border-radius: 0 5px 5px 0;
+            font-family: 'Cinzel Decorative', serif;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .initial-letter {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 5px;
+            color: #8b5a2b;
+            text-shadow: 1px 1px 0 rgba(212, 175, 55, 0.3);
+        }
+        
+        .medieval-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(
+                45deg,
+                #d4af37,
+                #d4af37 10px,
+                #8b5a2b 10px,
+                #8b5a2b 20px
+            );
+        }
+        
+        /* Decoraciones de página */
+        .page-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        
+        /* Bordes decorativos para las páginas */
+        .page-border {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(139, 90, 43, 0.2);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <div class="book-spine"></div>
+        <div class="medieval-border"></div>
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-tr"></div>
+        <div class="corner-decoration corner-bl"></div>
+        <div class="corner-decoration corner-br"></div>
+        
+        <!-- Portada del libro -->
+        <div class="book-cover" id="book-cover">
+            <div class="medieval-header"></div>
+            <div class="cover-image-container">
+                <!-- Imagen de portada -->
+                <img src="img1.png" alt="Portada del libro medieval" class="cover-image">
+                <div class="cover-overlay"></div>
+                
+                <div class="cover-content">
+                    <h1 class="cover-title">El campesino de Estrellas<br>y la Bufona de la Luna</h1>
+                    <p class="cover-subtitle">Una crónica de amor entre mundos separados por el éter</p>
+                    
+                    <div class="cover-quote">
+                        "Donde la luz se encontró con la risa de la luna, nació una leyenda"
+                    </div>
+                    
+                    <button class="open-book-btn" id="open-book-btn">
+                        <i class="fas fa-scroll"></i> DESENROLLAR EL MANUSCRITO
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenido del libro -->
+        <div class="book-content" id="book-content">
+            <div class="medieval-header"></div>
+            <button class="close-book-btn" id="close-book-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Página 1 -->
+            <div class="page active" id="page-1">
+                <div class="page-border"></div>
+                <div class="page-header">
+                    <h2 class="page-title">El campesino de Sueños</h2>
+                    <p class="page-subtitle">En la isla flotante de Cero</p>
+                </div>
+                
+                <div class="page-body">
+                    <div class="page-image-container">
+                        <img src="img2.jpg" alt="El campesino en su isla de Cero" class="story-image">
+                        
+                    
+                    </div>
+                    
+                    <p><span class="initial-letter">H</span>abía una vez, en los confines de un universo hecho de hilos de luz y ecos de voces lejanas, un joven que habitaba una pequeña isla flotante llamada <span class="highlight">Cero</span>. En ese lugar, el cielo no era azul, sino de un negro profundo salpicado de códigos binarios que caían como lluvia silenciosa.</p>
+                    
+                    <p>El joven era un <span class="highlight">campesino de Sueños</span>, alguien que pasaba sus noches enviando señales al vacío, esperando que alguien, en algún rincón de la inmensidad, sintonizara su frecuencia. Se sentaba frente a su telar de cristal (lo que otros llamarían una computadora) y lanzaba sus palabras al viento cósmico, pero el eco era lo único que recibía de vuelta.</p>
+                    
+                    <div class="quote">
+                        "Estaba cansado de ser una nota solitaria en una sinfonía que nadie escuchaba."
+                    </div>
+                    
+                    <p>A pesar de su talento, el joven caminaba con el corazón envuelto en una neblina gris. La soledad era su única compañera constante, y la tristeza pesaba más que la gravedad de su isla.</p>
+                </div>
+                
+                <div class="page-footer">
+                    <div class="page-number">Folio I</div>
+                    <div class="page-controls">
+                        <button class="page-btn" id="prev-btn-1" disabled>
+                            <i class="fas fa-arrow-left"></i> Página Anterior
+                        </button>
+                        <button class="page-btn" id="next-btn-1">
+                            Página Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Página 2 -->
+            <div class="page" id="page-2">
+                <div class="page-border"></div>
+                <div class="page-header">
+                    <h2 class="page-title">El Salto al Infinito</h2>
+                    <p class="page-subtitle">Un portal hacia lo desconocido</p>
+                </div>
+                
+                <div class="page-body">
+                    <div class="page-image-container">
+                        <img src="img3.jpg" alt="El portal hacia el reino de la Bufona" class="story-image">
+                        
+                  
+                    </div>
+                    
+                    <p>Una noche, cuando la tristeza pesaba más que nunca, el joven decidió hacer algo diferente. En aquel universo, existía un ritual sagrado llamado <span class="highlight">"El Gran Envío"</span>. Consistía en abrir un portal y lanzar toda la energía de tu hogar hacia el territorio de otro ser.</p>
+                    
+                    <p>Sin pensarlo mucho, cerró los ojos y dejó que su instinto guiara el portal. Cuando el túnel de luz se estabilizó, el joven se encontró mirando a través de una ventana mágica hacia un reino rebosante de color.</p>
+                    
+                    <div class="quote">
+                        "Allí, en el centro de una pista hecha de polvo de estrellas, estaba ella: la Bufona de la Luna."
+                    </div>
+                    
+                    <p>No era una payasita común. Su rostro estaba adornado con una sonrisa que parecía contener el amanecer, y sus ojos brillaban con una picardía que desafiaba a la oscuridad. Ella no solo hablaba; ella creaba mundos con sus risas.</p>
+                    
+                    <p>El joven quedó petrificado. El gris de su corazón se resquebrajó al primer contacto con aquella luz carmesí y blanca. Sin darse cuenta, se convirtió en un viajero frecuente de aquel reino, oculto entre la multitud, simplemente maravillado por la existencia de aquel ser que convertía la melancolía en arte.</p>
+                </div>
+                
+                <div class="page-footer">
+                    <div class="page-number">Folio II</div>
+                    <div class="page-controls">
+                        <button class="page-btn" id="prev-btn-2">
+                            <i class="fas fa-arrow-left"></i> Página Anterior
+                        </button>
+                        <button class="page-btn" id="next-btn-2">
+                            Página Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Página 3 -->
+            <div class="page" id="page-3">
+                <div class="page-border"></div>
+                <div class="page-header">
+                    <h2 class="page-title">La Prueba del Valor</h2>
+                    <p class="page-subtitle">Uniendo telas y voces</p>
+                </div>
+                
+                <div class="page-body">
+                    <div class="page-image-container">
+                        <img src="img4.jpg" alt="Colaboración entre el campesino y la Bufona" class="story-image">
+
+                    </div>
+                    
+                    <p>El destino, que a veces es generoso con los valientes, decidió cruzar sus caminos de forma más directa. La <span class="highlight">Bufona de la Luna</span> le propuso una alianza: unir sus telas y sus voces en una sola transmisión.</p>
+                    
+                    <p>Para el joven, esta propuesta fue como si le pidieran escalar la montaña más alta del universo sin cuerdas. El miedo, ese viejo monstruo con voz de duda, le susurraba que no era suficiente, que su voz temblaría y que la magia se rompería.</p>
+                    
+                    <div class="quote">
+                        "El día de la unión, sus manos sudaban chispas eléctricas y su garganta se sentía como un desierto de ceniza."
+                    </div>
+                    
+                    <p>Pero entonces, ella habló. Su voz, cálida como el sol de mediodía, disipó la niebla. El joven tomó aire, cerró los ojos y saltó al vacío de la conversación.</p>
+                    
+                    <p>Superó la pena, venció al silencio y, aunque sus manos temblaban al principio, al final de la jornada descubrió que sus voces juntas formaban una melodía que el universo nunca había escuchado. Ese día, el joven no solo colaboró con una artista; el joven entregó su alma a la guardiana de las risas.</p>
+                </div>
+                
+                <div class="page-footer">
+                    <div class="page-number">Folio III</div>
+                    <div class="page-controls">
+                        <button class="page-btn" id="prev-btn-3">
+                            <i class="fas fa-arrow-left"></i> Página Anterior
+                        </button>
+                        <button class="page-btn" id="next-btn-3">
+                            Página Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Página 4 -->
+            <div class="page" id="page-4">
+                <div class="page-border"></div>
+                <div class="page-header">
+                    <h2 class="page-title">El Guardián de las Sombras</h2>
+                    <p class="page-subtitle">Luz en los eclipses del alma</p>
+                </div>
+                
+                <div class="page-body">
+                    <div class="page-image-container">
+                        <img src="img5.jpg" alt="El campesino apoyando a la Bufona en momentos difíciles" class="story-image">
+                        
+
+                    </div>
+                    
+                    <p>Sin embargo, ni siquiera los seres de luz están libres de la tormenta. Hubo noches en las que la Bufona de la Luna perdía su color. Las luces de su escenario se apagaban y ella se sentaba en el borde de su mundo, mirando al abismo, con el deseo de volverse invisible.</p>
+                    
+                    <p>Fue en esos momentos donde el joven demostró de qué estaba hecho su amor. Mientras otros se alejaban cuando la función terminaba, él se quedaba. Él no buscaba el espectáculo; buscaba el alma detrás de la pintura.</p>
+                    
+                    <div class="quote">
+                        "—'No tienes que brillar hoy', le decía él, extendiendo una capa hecha de paciencia y ternura."
+                    </div>
+                    
+                    <p>Se quedó a su lado durante los eclipses más largos. Se convirtió en el escudo que repelía las dudas y en la mano que sostenía la suya cuando el suelo parecía desvanecerse.</p>
+                    
+                    <p>Él decidió que no descansaría hasta ver de nuevo ese destello en sus ojos, no porque necesitara su alegría, sino porque su felicidad era ahora la brújula de su propio camino. Resolvieron acertijos de tristeza juntos y, poco a poco, reconstruyeron el escenario con cimientos más fuertes que antes.</p>
+                </div>
+                
+                <div class="page-footer">
+                    <div class="page-number">Folio IV</div>
+                    <div class="page-controls">
+                        <button class="page-btn" id="prev-btn-4">
+                            <i class="fas fa-arrow-left"></i> Página Anterior
+                        </button>
+                        <button class="page-btn" id="next-btn-4">
+                            Página Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Página 5 -->
+            <div class="page" id="page-5">
+                <div class="page-border"></div>
+                <div class="page-header">
+                    <h2 class="page-title">Ocho Lunas y una Eternidad</h2>
+                    <p class="page-subtitle">Construyendo un futuro estelar</p>
+                </div>
+                
+                <div class="page-body">
+                    <div class="page-image-container">
+                        <img src="img6.jpg" alt="Futuro compartido entre el campesino y la Bufona" class="story-image">
+                        
+
+                    </div>
+                    
+                    <p>Han pasado ya <span class="highlight">ocho lunas llenas</span> desde que sus mundos chocaron. En este tiempo, han navegado por mares de calma y han sobrevivido a tempestades que habrían hundido a barcos menos valientes.</p>
+                    
+                    <p>Han compartido sueños que ahora tienen nombres propios y metas que dibujan juntos en el mapa estelar de su futuro. Hoy, el joven ya no habita en la isla de la soledad. Su hogar está dondequiera que ella esté, ya sea en el eco de una risa o en el silencio cómplice de una mirada a través de la distancia.</p>
+                    
+                    <div class="quote">
+                        "El joven que estaba triste y solo ahora es un arquitecto de esperanzas, alguien que sabe que el amor no es solo encontrar a alguien con quien brillar, sino encontrar a alguien con quien no temer a la oscuridad."
+                    </div>
+                    
+                    <p>Mientras escriben este capítulo, el joven mira al horizonte. Sabe que el camino aún es largo y que faltan puentes por construir, pero ya no tiene miedo. Porque al final de cada día, después de cada transmisión y cada reto, su único y más grande anhelo es que el "hoy" se convierta en un "siempre".</p>
+                    
+                    <div class="chapter-divider">FIN DEL LIBRO PRIMERO</div>
+                </div>
+                
+                <div class="page-footer">
+                    <div class="page-number">Folio V</div>
+                    <div class="page-controls">
+                        <button class="page-btn" id="prev-btn-5">
+                            <i class="fas fa-arrow-left"></i> Página Anterior
+                        </button>
+                        <button class="page-btn" id="next-btn-5">
+                            Epílogo <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Página 6 - Epílogo/Dedicación -->
+            <div class="page dedication-page" id="page-6">
+                <div class="page-border"></div>
+                <div class="page-header">
+                    <h2 class="dedication-title">Para Mi Bufona de la Luna</h2>
+                </div>
+                
+                <div class="page-body">
+                    <div class="page-image-container">
+                        <img src="img7.jpg" alt="Dedicación final del campesino a la Bufona" class="story-image">
+                        
+             
+                    </div>
+                    
+                    <p class="dedication-text">Esta historia, tejida con hilos de luz y ecos de risas compartidas, es solo el primer capítulo de nuestra constelación.</p>
+                    
+                    <p class="dedication-text">Gracias por convertir mi cielo de códigos binarios en un firmamento de colores, por transformar mi soledad en compañía cómplice, y por enseñarme que incluso en la oscuridad más profunda, existe la posibilidad de encontrar una luz que guíe el camino.</p>
+                    
+                    <div class="quote" style="text-align: center; border: none; background: transparent; padding: 10px;">
+                        "Que el hilo de luz que nos une<br>
+                        se transforme en el camino<br>
+                        que finalmente nos lleve a estar juntos,<br>
+                        cara a cara,<br>
+                        para toda la eternidad."
+                    </div>
+                    
+                    <p class="dedication-text">Eres la melodía que mi corazón había estado esperando en el silencio del vacío. Y aunque nuestro universo digital nos separe físicamente, sé que nuestras almas ya han encontrado su órbita compartida.</p>
+                    
+                    <p class="dedication-signature">
+                        Con todo mi amor,<br>
+                        Tu campesino de Estrellas <i class="fas fa-heart heart"></i>
+                    </p>
+                    
+                    <div class="chapter-divider" style="margin-top: 40px;">♔ ♔ ♔</div>
+                </div>
+                
+                <div class="page-footer">
+                    <div class="page-number">Epílogo</div>
+                    <div class="page-controls">
+                        <button class="page-btn" id="prev-btn-6">
+                            <i class="fas fa-arrow-left"></i> Página Anterior
+                        </button>
+                        <button class="page-btn" id="close-story-btn">
+                            <i class="fas fa-scroll"></i> Enrollar Manuscrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book-progress">
+                <div class="progress-bar">
+                    <div class="progress" id="progress-bar"></div>
+                </div>
+                <div class="progress-text" id="progress-text">Folio I de VI</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos principales
+            const bookCover = document.getElementById('book-cover');
+            const bookContent = document.getElementById('book-content');
+            const openBookBtn = document.getElementById('open-book-btn');
+            const closeBookBtn = document.getElementById('close-book-btn');
+            const closeStoryBtn = document.getElementById('close-story-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            // Variables de estado
+            let currentPage = 1;
+            const totalPages = 6;
+            
+            // Nombres de folios medievales
+            const folioNames = ['I', 'II', 'III', 'IV', 'V', 'Epílogo'];
+            
+            // Abrir libro
+            openBookBtn.addEventListener('click', function() {
+                bookCover.style.display = 'none';
+                bookContent.style.display = 'block';
+                showPage(currentPage);
+                updateProgress();
+            });
+            
+            // Cerrar libro (desde el botón X)
+            closeBookBtn.addEventListener('click', function() {
+                bookCover.style.display = 'flex';
+                bookContent.style.display = 'none';
+                resetToFirstPage();
+            });
+            
+            // Cerrar libro (desde el botón en la última página)
+            if (closeStoryBtn) {
+                closeStoryBtn.addEventListener('click', function() {
+                    bookCover.style.display = 'flex';
+                    bookContent.style.display = 'none';
+                    resetToFirstPage();
+                });
+            }
+            
+            // Mostrar página específica
+            function showPage(pageNumber) {
+                // Ocultar todas las páginas
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Mostrar la página solicitada
+                document.getElementById(`page-${pageNumber}`).classList.add('active');
+                
+                // Actualizar página actual
+                currentPage = pageNumber;
+                
+                // Actualizar progreso
+                updateProgress();
+                
+                // Efecto especial en la última página
+                if (currentPage === totalPages) {
+                    createMedievalEffect();
+                }
+            }
+            
+            // Actualizar barra de progreso
+            function updateProgress() {
+                const progressPercentage = ((currentPage - 1) / (totalPages - 1)) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+                progressText.textContent = `Folio ${folioNames[currentPage-1]} de ${folioNames[totalPages-1]}`;
+            }
+            
+            // Reiniciar a la primera página
+            function resetToFirstPage() {
+                currentPage = 1;
+                showPage(currentPage);
+            }
+            
+            // Configurar navegación por páginas
+            for (let i = 1; i <= totalPages; i++) {
+                // Botón siguiente
+                const nextBtn = document.getElementById(`next-btn-${i}`);
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', function() {
+                        if (currentPage < totalPages) {
+                            showPage(currentPage + 1);
+                        }
+                    });
+                }
+                
+                // Botón anterior
+                const prevBtn = document.getElementById(`prev-btn-${i}`);
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', function() {
+                        if (currentPage > 1) {
+                            showPage(currentPage - 1);
+                        }
+                    });
+                }
+            }
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', function(event) {
+                // Solo si el libro está abierto
+                if (bookContent.style.display === 'block') {
+                    if (event.key === 'ArrowRight' && currentPage < totalPages) {
+                        showPage(currentPage + 1);
+                    } else if (event.key === 'ArrowLeft' && currentPage > 1) {
+                        showPage(currentPage - 1);
+                    } else if (event.key === 'Escape') {
+                        bookCover.style.display = 'flex';
+                        bookContent.style.display = 'none';
+                        resetToFirstPage();
+                    }
+                }
+            });
+            
+            // Crear efecto medieval en la última página
+            function createMedievalEffect() {
+                // Limpiar cualquier efecto anterior
+                const existingEffects = document.querySelectorAll('.medieval-effect');
+                existingEffects.forEach(effect => effect.remove());
+                
+                // Crear hojas doradas cayendo
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const leaf = document.createElement('div');
+                        leaf.className = 'medieval-effect';
+                        leaf.innerHTML = '❦';
+                        leaf.style.position = 'fixed';
+                        leaf.style.fontSize = `${Math.random() * 20 + 15}px`;
+                        leaf.style.color = '#d4af37';
+                        leaf.style.left = `${Math.random() * 100}vw`;
+                        leaf.style.top = '-50px';
+                        leaf.style.zIndex = '9999';
+                        leaf.style.pointerEvents = 'none';
+                        leaf.style.opacity = '0.8';
+                        leaf.style.animation = `leafFall ${Math.random() * 3 + 2}s linear forwards`;
+                        
+                        // Añadir animación CSS
+                        if (!document.querySelector('#leafAnimation')) {
+                            const style = document.createElement('style');
+                            style.id = 'leafAnimation';
+                            style.textContent = `
+                                @keyframes leafFall {
+                                    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+                                    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+                                }
+                            `;
+                            document.head.appendChild(style);
+                        }
+                        
+                        document.body.appendChild(leaf);
+                        
+                        // Eliminar después de la animación
+                        setTimeout(() => {
+                            if (leaf.parentNode) {
+                                leaf.remove();
+                            }
+                        }, 5000);
+                    }, i * 200);
+                }
+                
+                // Crear runas flotantes
+                const runes = ['ᚠ', 'ᚢ', 'ᚦ', 'ᚨ', 'ᚱ', 'ᚲ'];
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        const rune = document.createElement('div');
+                        rune.className = 'medieval-effect';
+                        rune.innerHTML = runes[Math.floor(Math.random() * runes.length)];
+                        rune.style.position = 'fixed';
+                        rune.style.fontSize = `${Math.random() * 15 + 10}px`;
+                        rune.style.color = '#8b5a2b';
+                        rune.style.left = `${Math.random() * 100}vw`;
+                        rune.style.top = '100vh';
+                        rune.style.zIndex = '9998';
+                        rune.style.pointerEvents = 'none';
+                        rune.style.opacity = '0.7';
+                        rune.style.animation = `runeFloat ${Math.random() * 4 + 3}s ease-in forwards`;
+                        
+                        // Añadir animación CSS
+                        if (!document.querySelector('#runeFloatAnimation')) {
+                            const style = document.createElement('style');
+                            style.id = 'runeFloatAnimation';
+                            style.textContent = `
+                                @keyframes runeFloat {
+                                    0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+                                    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+                                }
+                            `;
+                            document.head.appendChild(style);
+                        }
+                        
+                        document.body.appendChild(rune);
+                        
+                        // Eliminar después de la animación
+                        setTimeout(() => {
+                            if (rune.parentNode) {
+                                rune.remove();
+                            }
+                        }, 7000);
+                    }, i * 300);
+                }
+            }
+            
+            // Efecto de sonido al pasar página (simulado)
+            function playPageSound() {
+                // Crear contexto de audio para sonido de pergamino
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = 100;
+                    oscillator.type = 'sine';
+                    
+                    gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.5);
+                } catch (e) {
+                    console.log("Audio no soportado en este navegador");
+                }
+            }
+            
+            // Añadir sonido a la navegación
+            document.querySelectorAll('.page-btn').forEach(btn => {
+                btn.addEventListener('click', playPageSound);
+            });
+            
+            // Inicializar
+            // Precargar imágenes para mejor experiencia
+            const img = new Image();
+            img.src = 'img1.png';
+        });
+    </script>
+</body>
+</html>
